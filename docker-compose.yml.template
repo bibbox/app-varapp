@@ -1,0 +1,74 @@
+version: '3'
+networks:
+    bibbox-default-network:
+      external: true
+
+services:
+  §§INSTANCE-varapp-frontend:
+    image: bibbox/varapp-frontend:2.0.3
+    container_name: §§INSTANCE-varapp-frontend
+    ports:
+      - 8080:80
+    networks:
+    - bibbox-default-network
+    depends_on:
+      - §§INSTANCE-varapp-backend
+    environment:
+      - BACKEND_URL="http://§§INSTANCE-backend.§§BASEURL/varapp"
+    proxy:
+     TYPE: PRIMARY
+     URLPREFIX: §§INSTANCE
+     TEMPLATE: default
+     DISPLAYNAME: 'Varapp'  
+
+  §§INSTANCE-varapp-backend:
+    image: sibswiss/varapp-backend:2.0.3
+    container_name: §§INSTANCE-varapp-backend
+    ports:
+      - 8000:80
+    networks:
+    - bibbox-default-network
+    depends_on:
+      - §§INSTANCE-varapp-mysql
+      - §§INSTANCE-varapp-redis
+    links:
+      - §§INSTANCE-varapp-mysql:mysql_1
+      - §§INSTANCE-varapp-redis:redis   
+    volumes:
+      - ./data/resources/db:/db
+      - ./data/varmed/settings:/app/varmed/settings
+    environment:
+      - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
+      - HOST=§§INSTANCE.§§BASEURL
+      - BASE_URL=http://§§INSTANCE-backend.§§BASEURL
+      - SECRET_KEY=§§SECRET_KEY
+#      - EMAIL_HOST=§§EMAIL_HOST
+#      - EMAIL_PORT=§§EMAIL_PORT
+#      - EMAIL_FROM=§§EMAIL_FROM
+      - MYSQL_PASSWORD=§§DB_PASSWORD
+    proxy:
+     TYPE: PRIMARY
+     URLPREFIX: §§INSTANCE-backend
+     TEMPLATE: default
+     DISPLAYNAME: 'Varapp-Backend'  
+
+  §§INSTANCE-varapp-mysql:
+    image: mariadb
+    container_name: §§INSTANCE-varapp-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: §§DB_PASSWORD
+      MYSQL_DATABASE: users_db
+    volumes:
+      - ./data/mysql-data-volume:/var/lib/mysql
+    networks:
+    - bibbox-default-network
+  §§INSTANCE-varapp-redis:
+    image: "redis:alpine"
+    container_name: §§INSTANCE-varapp-redis
+    ports:
+      - "6379:6379"
+    networks:
+    - bibbox-default-network
+

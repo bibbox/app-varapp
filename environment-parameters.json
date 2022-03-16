@@ -1,0 +1,13 @@
+[
+    {
+        "id":"ADMIN_PASSWORD",
+        "display_name":"Molgenis ADMIN Password",
+        "type":"text",
+        "default_value":"admin",
+        "description":"Admin Password, please change for production",
+        "min_length": "1",
+        "max_length": "128"
+     }
+]
+
+

@@ -1,0 +1,62 @@
+version: '3'
+networks:
+    bibbox-default-network:
+      external: true
+
+services:
+  bibbox-varapp-backend:
+    image: sibswiss/varapp-backend:2.0.3
+    container_name: bibbox-varapp-backend
+    ports:
+      - 8000:80
+    networks:
+    - bibbox-default-network
+    depends_on:
+      - bibbox-varapp-mysql
+      - bibbox-varapp-redis
+    links:
+      - bibbox-varapp-mysql:mysql_1
+      - bibbox-varapp-redis:redis   
+    volumes:
+      - ${GEMINI_DB_PATH:-./data/resources/db}:/db
+      - ${SETTINGS_PATH:-./data/varmed/settings}:/app/varmed/settings
+    environment:
+      - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
+      - HOST=localhost
+      - BASE_URL=http://localhost:8000
+      - SECRET_KEY=112233
+      - EMAIL_HOST=localhost
+      - EMAIL_PORT=1025
+      - EMAIL_FROM=varapp@varapp.vital-it.ch
+      - MYSQL_PASSWORD=test
+  bibbox-varapp-frontend:
+    image: bibbox/varapp-frontend:2.0.3
+    container_name: bibbox-varapp-frontend
+    ports:
+      - 8080:80
+    networks:
+    - bibbox-default-network
+    depends_on:
+      - bibbox-varapp-backend
+#    environment:
+#      - BACKEND_URL="http://localhost:8000"
+  bibbox-varapp-mysql:
+    image: mariadb
+    container_name: bibbox-varapp-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: users_db
+    volumes:
+      - ./data/mysql-data-volume:/var/lib/mysql
+    networks:
+    - bibbox-default-network
+  bibbox-varapp-redis:
+    image: "redis:alpine"
+    container_name: bibbox-varapp-redis
+    ports:
+      - "6379:6379"
+    networks:
+    - bibbox-default-network
+
