@@ -1,10 +1,19 @@
 [
     {
-        "id":"ADMIN_PASSWORD",
-        "display_name":"Molgenis ADMIN Password",
+        "id":"DB_PASSWORD",
+        "display_name":"Database Password",
+        "type":"password",
+        "default_value":"pwd",
+        "description":"Database Password",
+        "min_length": "1",
+        "max_length": "128"
+     },
+      {
+        "id":"SECRET_KEY",
+        "display_name":"SECRET KEY",
         "type":"text",
-        "default_value":"admin",
-        "description":"Admin Password, please change for production",
+        "default_value":"something",
+        "description":"SECRET KEY",
         "min_length": "1",
         "max_length": "128"
      }
