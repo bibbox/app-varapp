@@ -2,7 +2,7 @@
 
 ### Start Varapp
 
-Be patient this can take up to 5 minutes 
+Be patient this can take up to 5 minutes.
 
 ### Login 
 
@@ -10,7 +10,7 @@ The default admin username is `admin`. The admin password is `admin`.
 
 ![Screenshot01](assets/install-screen-01.png)
 
-### Chnage your admin password
+### Change your admin password
 
 Please change your admin password immediately after the installation:
 
