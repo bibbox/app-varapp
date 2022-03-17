@@ -14,7 +14,8 @@ services:
     depends_on:
       - §§INSTANCE-varapp-backend
     environment:
-      - BACKEND_URL=http://§§INSTANCE-backend.§§BASEURL/varapp
+#      - BACKEND_PROTOCOL=http
+      - BACKEND_LOCATION=§§INSTANCE-backend.§§BASEURL/varapp
     proxy:
      TYPE: PRIMARY
      URLPREFIX: §§INSTANCE
@@ -53,7 +54,7 @@ services:
      DISPLAYNAME: 'Varapp-Backend'  
 
   §§INSTANCE-varapp-mysql:
-    image: mariadb
+    image: mariadb:10.7.3
     container_name: §§INSTANCE-varapp-mysql
     ports:
       - "3306:3306"
@@ -65,7 +66,7 @@ services:
     networks:
     - bibbox-default-network
   §§INSTANCE-varapp-redis:
-    image: "redis:alpine"
+    image: "redis:6.2.6-alpine"
     container_name: §§INSTANCE-varapp-redis
     ports:
       - "6379:6379"

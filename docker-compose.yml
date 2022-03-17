@@ -39,9 +39,10 @@ services:
     depends_on:
       - bibbox-varapp-backend
 #    environment:
-#      - BACKEND_URL="http://localhost:8000"
+#      - BACKEND_PROTOCOL=http
+#      - BACKEND_LOCATION=localhost:8000/varapp
   bibbox-varapp-mysql:
-    image: mariadb
+    image: mariadb:10.7.3
     container_name: bibbox-varapp-mysql
     ports:
       - "3306:3306"
@@ -53,7 +54,7 @@ services:
     networks:
     - bibbox-default-network
   bibbox-varapp-redis:
-    image: "redis:alpine"
+    image: "redis:6.2.6-alpine"
     container_name: bibbox-varapp-redis
     ports:
       - "6379:6379"
