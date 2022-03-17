@@ -2,19 +2,21 @@
 
 This container can be installed as [BIBBOX APP](http://bibbox.readthedocs.io/en/latest/admin-documentation/ "BIBBOX App Store") or standalone. 
 
-* after the docker installation follow these [instructions](https://github.com/bibbox/app-redcap/blob/master/INSTALL-APP.md)
+* After the docker installation follow these [instructions](INSTALL-APP.md)
 
 ## Standalone Installation
 
 Clone the github repsoitory and start the install.sh. If necessary change the ports and volume mounts in `docker-compose.yml`.  
 
-`sudo git clone https://github.com/bibbox/app-varapp
+`sudo git clone https://github.com/bibbox/app-varapp`
 
 `sudo chmod +x install.sh`
 
 `sudo ./install.sh`
 
-default login admin/admin
+Default **login** `admin`/`admin`
+
+Finish your varapp setup by following these [instructions](INSTALL-APP.md).
 
 ## Install within BIBBOX
 
@@ -25,7 +27,10 @@ The BIBBOX framework can be installed
 
 After BIBBOX is up and running, you can use the [BIBBOX APP Store](http://bibbox.readthedocs.io/en/latest/admin-documentation/ "BIBBOX App Store") to install a lot of software tools. 
 
-default login admin/admin
+Default **login** `admin`/`admin`
+
+Finish your varapp setup by following these [instructions](INSTALL-APP.md).
+
 
 ## Docker Images Used
 
@@ -37,8 +42,8 @@ default login admin/admin
  
 ## Database information
 
-- DB_PASSWORD: pwd
-- SECRET_KEY: K6QKN6C2xtcl.
+- DB_PASSWORD: `pwd`
+- SECRET_KEY: `K6QKN6C2xtcl.`
 
 ## Mounted Volumes
 
