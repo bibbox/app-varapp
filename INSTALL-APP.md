@@ -12,7 +12,7 @@ The default admin username is `admin`. The admin password is `admin`.
 
 ### Change your admin password
 
-Please change your admin password immediately after the installation:
+Please change your admin password immediately after the installation in the `My Account` tab:
 
 ![Screenshot02](assets/install-screen-02.png)
 
