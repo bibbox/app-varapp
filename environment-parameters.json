@@ -12,7 +12,7 @@
         "id":"SECRET_KEY",
         "display_name":"SECRET KEY",
         "type":"text",
-        "default_value":"something",
+        "default_value":"K6QKN6C2xtcl.",
         "description":"SECRET KEY",
         "min_length": "1",
         "max_length": "128"
