@@ -16,6 +16,7 @@ Clone the github repsoitory and start the install.sh. If necessary change the po
 
 Default **login** `admin`/`admin`
 
+You can access varapp via your webbrowser at [http://localhost:8080](http://localhost:8080).
 Finish your varapp setup by following these [instructions](INSTALL-APP.md).
 
 ## Install within BIBBOX
