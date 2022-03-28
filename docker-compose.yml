@@ -18,7 +18,7 @@ services:
       - bibbox-varapp-mysql:mysql_1
       - bibbox-varapp-redis:redis   
     volumes:
-      - ${GEMINI_DB_PATH:-./data/resources/db}:/db
+      - ${GEMINI_DB_PATH:-./data/resources/db}:/app/resources/db
       - ${SETTINGS_PATH:-./data/varmed/settings}:/app/varmed/settings
       - ./data/intit:/var/lib/mysql
     environment:
