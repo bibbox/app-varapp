@@ -20,6 +20,7 @@ services:
     volumes:
       - ${GEMINI_DB_PATH:-./data/resources/db}:/db
       - ${SETTINGS_PATH:-./data/varmed/settings}:/app/varmed/settings
+      - ./data/intit:/var/lib/mysql
     environment:
       - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
       - HOST=localhost
