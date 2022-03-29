@@ -36,8 +36,9 @@ services:
       - §§INSTANCE-varapp-mysql:mysql_1
       - §§INSTANCE-varapp-redis:redis   
     volumes:
-      - ./data/resources/db:/db
+      - ./data/resources/db:/app/resources/db
       - ./data/varmed/settings:/app/varmed/settings
+      - ./data/init:/var/lib/mysql
     environment:
       - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
       - HOST=§§INSTANCE.§§BASEURL
