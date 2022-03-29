@@ -1,6 +1,6 @@
 # Varapp BIBBOX application
 
-This container can be installed as [BIBBOX APP](http://bibbox.readthedocs.io/en/latest/admin-documentation/ "BIBBOX App Store") or standalone. 
+This container can be installed as [BIBBOX APP](https://bibbox.readthedocs.io/en/latest/) or standalone. 
 
 * After the docker installation follow these [instructions](INSTALL-APP.md)
 
@@ -16,16 +16,12 @@ Clone the github repsoitory and start the install.sh. If necessary change the po
 
 Default **login** `admin`/`admin`
 
+You can access varapp via your webbrowser at [http://localhost:8080](http://localhost:8080).
 Finish your varapp setup by following these [instructions](INSTALL-APP.md).
 
 ## Install within BIBBOX
 
-The BIBBOX framework can be installed 
-* as a [virtual machine](http://bibbox.bbmri-eric.eu/resources/machine/), 
-* using [vagrant/puppet](http://bibbox.readthedocs.io/en/latest/installation-vagrant/) 
-* are on any Ubuntu System following these [instructions](http://bibbox.readthedocs.io/en/latest/installation-source/)  
-
-After BIBBOX is up and running, you can use the [BIBBOX APP Store](http://bibbox.readthedocs.io/en/latest/admin-documentation/ "BIBBOX App Store") to install a lot of software tools. 
+Within BIBBOX you can use the [BIBBOX](https://bibbox.readthedocs.io/en/latest/) to install a lot of software tools. After the installation is finished you can start your application in the dashboard.
 
 Default **login** `admin`/`admin`
 

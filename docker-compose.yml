@@ -18,8 +18,9 @@ services:
       - bibbox-varapp-mysql:mysql_1
       - bibbox-varapp-redis:redis   
     volumes:
-      - ${GEMINI_DB_PATH:-./data/resources/db}:/db
+      - ${GEMINI_DB_PATH:-./data/resources/db}:/app/resources/db
       - ${SETTINGS_PATH:-./data/varmed/settings}:/app/varmed/settings
+      - ./data/init:/var/lib/mysql
     environment:
       - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
       - HOST=localhost
