@@ -38,6 +38,7 @@ services:
     volumes:
       - ./data/resources/db:/db
       - ./data/varmed/settings:/app/varmed/settings
+      - ./data/init:/var/lib/mysql
     environment:
       - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
       - HOST=§§INSTANCE.§§BASEURL
