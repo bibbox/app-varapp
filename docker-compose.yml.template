@@ -36,7 +36,7 @@ services:
       - §§INSTANCE-varapp-mysql:mysql_1
       - §§INSTANCE-varapp-redis:redis   
     volumes:
-      - ./data/resources/db:/app/resources/db
+      - ./data/resources/db:/db
       - ./data/varmed/settings:/app/varmed/settings
       - ./data/init:/var/lib/mysql
     environment:
