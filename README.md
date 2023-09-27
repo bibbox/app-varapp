@@ -39,7 +39,7 @@ Finish your varapp setup by following these [instructions](INSTALL-APP.md).
 ## Database information
 
 - DB_PASSWORD: `pwd`
-- SECRET_KEY: `K6QKN6C2xtcl.`
+- SECRET_KEY: `changethissecretkeyinproductionenvironments`
 
 ## Mounted Volumes
 
