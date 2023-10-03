@@ -3,8 +3,8 @@
         "id":"DB_PASSWORD",
         "display_name":"Database Password",
         "type":"password",
-        "default_value":"pwd",
-        "description":"Database Password",
+        "default_value":"changethispasswordinproductionenvironments",
+        "description":"Please enter your Database Password",
         "min_length": "1",
         "max_length": "128"
      },

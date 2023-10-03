@@ -8,11 +8,11 @@ This container can be installed as [BIBBOX APP](https://bibbox.readthedocs.io/en
 
 Clone the github repsoitory and start the install.sh. If necessary change the ports and volume mounts in `docker-compose.yml`.  
 
-`sudo git clone https://github.com/bibbox/app-varapp`
+`git clone https://github.com/bibbox/app-varapp`
 
-`sudo chmod +x install.sh`
+`chmod +x install.sh`
 
-`sudo ./install.sh`
+`./install.sh`
 
 Default **login** `admin`/`admin`
 
