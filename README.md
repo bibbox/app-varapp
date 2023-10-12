@@ -1,50 +1,56 @@
-# Varapp BIBBOX application
+# varapp BIBBOX application
 
-This container can be installed as [BIBBOX APP](https://bibbox.readthedocs.io/en/latest/) or standalone. 
+This container can be installed as [BIBBOX APP](https://bibbox.readthedocs.io/en/latest/ "BIBBOX App Store") or standalone. 
 
-* After the docker installation follow these [instructions](INSTALL-APP.md)
+- after the docker installation follow these [instructions](INSTALL-APP.md)
 
-## Standalone Installation
+## Standalone Installation 
 
-Clone the github repsoitory and start the install.sh. If necessary change the ports and volume mounts in `docker-compose.yml`.  
+Clone the github repository. If necessary change the ports in the environment file `.env` and the volume mounts in `docker-compose.yml`.
 
-`git clone https://github.com/bibbox/app-varapp`
 
-`chmod +x install.sh`
+```
+git clone https://github.com/bibbox/app-varapp
+cd app-varapp
+docker-compose up -d
+```
 
-`./install.sh`
+The main App can be opened and set up at
+
+```
+http://localhost:8000
+```
+
 
 Default **login** `admin`/`admin`
 
-You can access varapp via your webbrowser at [http://localhost:8080](http://localhost:8080).
-Finish your varapp setup by following these [instructions](INSTALL-APP.md).
 
 ## Install within BIBBOX
 
-Within BIBBOX you can use the [BIBBOX](https://bibbox.readthedocs.io/en/latest/) to install a lot of software tools. After the installation is finished you can start your application in the dashboard.
+Visit the BIBBOX page and find the App by its name in the Store. Click on the symbol and select Install. Then fill the parameters below and name your app click install again.
 
-Default **login** `admin`/`admin`
+## Docker Images used
+  - [sibswiss/varapp-backend](https://hub.docker.com/r/sibswiss/varapp-backend) 
+  - [bibbox/varapp-frontend](https://hub.docker.com/r/bibbox/varapp-frontend) 
+  - [mariadb](https://hub.docker.com/r/mariadb) 
+  - [redis](https://hub.docker.com/r/redis) 
 
-Finish your varapp setup by following these [instructions](INSTALL-APP.md).
 
-
-## Docker Images Used
-
-
- * [bibbox/varapp-frontend](https://hub.docker.com/r/bibbox/varapp-frontend)
- * [sibswiss/varapp-backend](https://hub.docker.com/r/sibswiss/varapp-backend), offical container
- * [mariadb](https://hub.docker.com/_/mariadb), offical mariadb container
- * [redis](https://hub.docker.com/_/redis), offical redis container
  
-## Database information
+## Install Environment Variables
+  - DB_PASSWORD = Database Password
+  - SECRET_KEY = SECRET KEY
 
-- DB_PASSWORD: `pwd`
-- SECRET_KEY: `changethissecretkeyinproductionenvironments`
+  
+The default values for the standalone installation are:
+  - DB_PASSWORD = pwd
+  - SECRET_KEY = changethissecretkeyinproductionenvironments
 
+  
 ## Mounted Volumes
-
-- ./data/mysql-data-volume
-- ./data/resources/db
-- ./data/varmed/settings
-
-
+### sibswiss/varapp-backend Conatiner
+  - *${GEMINI_DB_PATH:-./data/resources/db}:/db*
+  - *${SETTINGS_PATH:-./data/varmed/settings}:/app/varmed/settings*
+  - *./data/init:/var/lib/mysql*
+### mariadb Conatiner
+  - *./data/mysql-data-volume:/var/lib/mysql*
