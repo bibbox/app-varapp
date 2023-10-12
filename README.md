@@ -8,16 +8,22 @@ This container can be installed as [BIBBOX APP](https://bibbox.readthedocs.io/en
 
 Clone the github repository. If necessary change the ports in the environment file `.env` and the volume mounts in `docker-compose.yml`.
 
+
 ```
 git clone https://github.com/bibbox/app-varapp
 cd app-varapp
 docker-compose up -d
 ```
 
-The main app can be opened and set up at
+The main App can be opened and set up at
+
 ```
 http://localhost:8000
 ```
+
+
+Default **login** `admin`/`admin`
+
 
 ## Install within BIBBOX
 
