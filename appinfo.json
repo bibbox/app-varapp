@@ -8,5 +8,5 @@
 	"application_url": "https://github.com/sib-swiss/varapp-backend-py",
 	"tags": ["Bioinformatics", "Variant filtering"],
 	"application_documentation_url": "https://github.com/sib-swiss/varapp-docs",
-	"instance_information": "work in progress"
+	"instance_information": "<p>Application to filter genetic variants</p><p>Default user: admin<br />Default password: admin</p>"
 }
