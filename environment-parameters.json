@@ -4,7 +4,7 @@
         "display_name":"Database Password",
         "type":"password",
         "default_value":"changethispasswordinproductionenvironments",
-        "description":"Please enter your Database Password",
+        "description":"Please choose a password for your database",
         "min_length": "1",
         "max_length": "128"
      },
@@ -13,7 +13,7 @@
         "display_name":"SECRET KEY",
         "type":"text",
         "default_value":"changethissecretkeyinproductionenvironments",
-        "description":"SECRET KEY",
+        "description":"Please choose a SECRET KEY",
         "min_length": "1",
         "max_length": "128"
      }
